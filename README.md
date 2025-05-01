@@ -135,10 +135,4 @@ terraform destroy
   - [Terraform Cloud](https://app.terraform.io) for state management
   - [GitHub Secrets](https://docs.github.com/en/actions/security-guides/encrypted-secrets) for CI/CD integration
 
-## 📄 License
 
-MIT License — free to use, modify, and distribute.
-
-## 🤝 Contributions
-
-Feel free to submit issues or pull requests. Let’s make cross-cloud networking easier!
