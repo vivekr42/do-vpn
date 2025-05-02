@@ -17,7 +17,8 @@ shared_key = "MyStrongSharedKey123!"
 azure_subscription_id = "2e5a8c68-236a-494f-896f-a"
 azure_client_id       = "6273d2fd-4829-4e3"
 azure_client_secret   = "B_g8Q~6pGyS7xt9Yk"
-azure_tenant_id       = "9ae3-ad91-f0dc16c1f74e"
-
-
+azure_tenant_id       = "9ae3-ad91-f0dc16c1f74e"\
+doiv_range        = "10.10.0.0/24" #Local subnet (DigitalOcean internal VPC range)
+Azure_subnet      = "10.1.0.0/16" #The subnet on the Azure side
+protocol          = "ikev2"  #keyexchange=ikev2: Use IKEv2 (modern and secure protocol)
 
