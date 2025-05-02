@@ -39,7 +39,7 @@ resource "digitalocean_droplet" "vpn" {
     "systemctl restart ssh || true",
 
     # Write IPsec configuration safely
-    "bash -c 'cat > /etc/ipsec.conf <<EOF\nconfig setup\n    charondebug=\"all\"\n\nconn azure\n    auto=start\n    keyexchange=ikev2\n    ike=aes256-sha1-modp1024!\n    esp=aes256-sha1!\n    left=%defaultroute\n    leftid=%any\n    leftsubnet=10.10.0.0/24\n    right=${var.azure_gateway_ip}\n    rightsubnet=10.1.0.0/16\n    authby=psk\nEOF'",
+    "bash -c 'cat > /etc/ipsec.conf <<EOF\nconfig setup\n    charondebug=\"all\"\n\nconn azure\n    auto=start\n    keyexchange=${var.protocol}\n    ike=aes256-sha1-modp1024!\n    esp=aes256-sha1!\n    left=%defaultroute\n    leftid=%any\n    leftsubnet=${var.doiv_range}\n    right=${var.azure_gateway_ip}\n    rightsubnet=${var.Azure_subnet}10.1.0.0/16\n    authby=psk\nEOF'",
 
     # Write secrets file
     "bash -c 'cat > /etc/ipsec.secrets <<EOF\n%any : PSK \"${var.vpn_psk}\"\nEOF'",
