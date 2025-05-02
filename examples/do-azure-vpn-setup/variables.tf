@@ -82,14 +82,18 @@ variable "azure_tenant_id" {
 variable "doiv_range" {
   description = "Local subnet (DigitalOcean internal VPC range)"
   type        = string
+  default     = "10.10.0.0/24"
 }
 
 variable "Azure_subnet" {
   description = "The subnet on the Azure side"
   type        = string
+  default     = "10.1.0.0/16"
 }
 
 variable "protocol" {
-  description = "modern and secure protocol"
+  description = "Modern and secure protocol"
   type        = string
+  default     = "ikev2"
 }
+
